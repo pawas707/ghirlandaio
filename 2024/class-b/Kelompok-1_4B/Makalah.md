@@ -69,11 +69,16 @@ berdasarkan dua metodologis yang telah disebutkan bahwa perbedaan antara sains d
 
 **D. Analisa Mendalam terhadap Konflik**
   
-  Konflik antara sains dan agama
+  Konflik antara sains dan agama merupakan suatu konflik persaingan tentang perebutan makna dan kekuasaan. Harari menjelaskan bahwa agama memiliki fungsi sebagai sebagai sistem hukum 
    
 # **BAB III** **PENUTUP**
 
 **A. Kesimpulan**
+
+# **DAFTAR PUSTAKA**
+
+Harari, Yuval Noah. (2018). Homo Deus: Masa Depan Umat Manusia. Jakarta: Alvabet.
+
 
 
 
