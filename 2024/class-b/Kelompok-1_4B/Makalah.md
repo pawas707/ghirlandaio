@@ -57,7 +57,7 @@ Adapun tujuan penulisan makalah ini adalah:
 **C. Perbedaan Metodologis antara Sains dan Agama**
 
 **D. Analisa Mendalam terhadap Konflik**
-Konflik antara sains dan agama
+  Konflik antara sains dan agama
    
 # **BAB III** **PENUTUP**
 
