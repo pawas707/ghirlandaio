@@ -44,8 +44,28 @@ dalam  menginstall desktop Arch Linux terdapat beberapa komponen penting yang ha
 
 ## 1.2 Rumusan Masalah
 
+- Baigamana langkah instalasi NetworkManager?
+
+- Baigamana langkah instalasi Plasma?
+
+- Baigamana langkah instalasi Pepwire?
+
+- Baigamana langkah instalasi Dolphin?
+
+- Baigamana langkah instalasi Kitty?
+
 ## 1.3 Tujuan Masalah
 
+- Menjelaskan langkah instalasi NetworkManager.
+
+- Menjelaskan langkah instalasi Plasma.
+
+- Menjelaskan langkah instalasi Pepwire.
+
+- Menjelaskan langkah instalasi Dolphin.
+
+- Menjelaskan langkah instalasi Kitty.
+  
 # BAB II PEMBAHASAN
 
 # BAB III PENUTUP
