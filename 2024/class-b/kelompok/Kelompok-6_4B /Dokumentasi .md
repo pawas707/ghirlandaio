@@ -54,11 +54,24 @@ systemctl enable sddm
 ```
 EDITOR=nvim visudo
 ```
+```
+ketik % wheel ALL=(ALL:ALL) ALL
+```
+
 ## 6. Membangun ulang (rebuild) citra ramdisk awal untuk semua kernel Linux yang terpasang
 
 ```
 mkinitcpio -P
 ```
+
+## 7. Finalisasi & Siklus Reboot
+```
+exit
+```
+```
+umount -R /mnt
+```
+
 
 
 
