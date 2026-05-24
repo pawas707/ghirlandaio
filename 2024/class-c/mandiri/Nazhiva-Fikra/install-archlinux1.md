@@ -1,11 +1,74 @@
 # Instalasi Arch Linux dan KDE Plasma
 ## Persiapan 
-1. Pastikan _Device Encryption_ di laptop itu off
-2. Mengunduh ISO Arch Linux di situs https://archlinux.org/download/. Lalu scroll ke bawah hingga menemukan Indonesia dan klik citrahost.com
+- Pastikan _Device Encryption_ di laptop itu off
+- Mengunduh ISO Arch Linux di situs https://archlinux.org/download/. Lalu scroll ke bawah hingga menemukan Indonesia dan klik citrahost.com
 <img width="1600" height="1200" alt="arch indonesia" src="https://github.com/user-attachments/assets/ec33dbde-7d86-456f-af22-1b1b62102e49" />
 
-3. Klik archlinux-2026.05.01-x86_64.iso
+- Klik archlinux-2026.05.01-x86_64.iso
 <img width="1600" height="1200" alt="citrahost" src="https://github.com/user-attachments/assets/f1d02ce0-54ea-42fa-bb7a-4dc61d3ea50a" />
 
-4. Siapkan flashdisk dan unduh Rufus di situs https://rufus.ie/id. Lalu klik rufus-4.14.exe (disesuaikan laptop masing-masing)
+- Siapkan flashdisk dan unduh Rufus di situs https://rufus.ie/id. Lalu klik rufus-4.14.exe (disesuaikan laptop masing-masing)
 <img width="1599" height="899" alt="rufus" src="https://github.com/user-attachments/assets/12351e75-a978-4cac-9462-2c8cea610225" />
+
+- Buka CMD (windows + r). Lalu ketik diskpart
+<img width="1200" height="1600" alt="diskpart" src="https://github.com/user-attachments/assets/1fb61d8a-57e0-4074-9e3c-7ed62ed61d68" />
+
+- Kemudian ketik list disk. Muncul tampilannya dan cek indikator visual harddisknya itu GPT
+<img width="1200" height="1600" alt="list disk" src="https://github.com/user-attachments/assets/f2e80b60-c6c5-4606-b19b-b11fa80d645d"/>
+<img width="1600" height="1200" alt="gpt" src="https://github.com/user-attachments/assets/52edd743-5ac3-4111-9265-0fc46b62ffc7" />
+
+## Proses Instalasi
+- Sambungkan flashdisk ke Laptop lalu copypaste file ISO Arch Linux. Masuk ke file Rufus. Ubah pengaturan pada _Boot Selection_ pilih file Arch Linux yang tadi sudah dicopypaste. Ubah juga pada _Partition Scheme_ menjadi GPT. Lalu klik start
+<img width="1200" height="1600" alt="drive properties" src="https://github.com/user-attachments/assets/3f2f6df6-020e-4bb7-93df-59e61287e399" />
+
+- Masuk ke disk management, lalu klik kanan dan klik shrink volume. Kemudian atur sizenya sesuai keinginan masing-masing. Setelah itu, klik shrink
+<img width="1600" height="1200" alt="disk mane" src="https://github.com/user-attachments/assets/aff8c83f-f9be-4922-bd49-ae0c34f541a8" />
+<img width="1600" height="1200" alt="shrink" src="https://github.com/user-attachments/assets/4cffefd4-4cff-46d0-a848-7815276e300e" />
+
+- Akses Bios dengan menekan tombol **esc** pada keyboard. Kemudian buka tab Security -> Secure Boot dan ubah statusnya menjadi **disable**. Lalu klik save & exit. Otomatis layar laptop akan mati.
+<img width="1600" height="1200" alt="security" src="https://github.com/user-attachments/assets/a503beba-63db-47b7-834d-392fcedb6197" />
+<img width="1600" height="1200" alt="save exit" src="https://github.com/user-attachments/assets/692dce9c-4c7c-4954-ad69-06e91dc2d8f7" />
+
+- Setelah itu, masuk ke Boot Menu dan pilih yang USB. Otomatis masuk ke halaman awal installer Arch Linux. Dilanjutkan dengan mengetik **cat /sys/firmware/efi/fw_platform_size**. Kemudian akan muncul '64' (ini berarti tipe perangkat OS nya yaitu 64-bit)
+<img width="1600" height="1200" alt="cat" src="https://github.com/user-attachments/assets/d90ec9f1-cbb1-4aea-a283-c8b71e2e2cbe" />
+
+- Kemudian mengoneksikan internet dengan ketik **iwctl**. Dilanjutkan dengan mengecek perangkat wireless dengan mengetik **device list** (cek powerednya harus on)
+<img width="1600" height="1200" alt="device list" src="https://github.com/user-attachments/assets/26ccddd9-5b22-44c9-85cb-adcbc9cbb170" />
+
+- Lalu ketik **station wlan0 get-networks** untuk melihat jaringan wifi yang ada di lingkungan sekitar kita
+<img width="1600" height="1200" alt="get net" src="https://github.com/user-attachments/assets/7b139706-e44c-4b86-afef-9719d30ee00f" />
+
+- Untuk menscan jaringan ketik **station wlan0 scan**. Dilanjutkan dengan mengetik **station wlan0 connect "oppo a54"** dan masukan passwordnya
+<img width="1600" height="1200" alt="sambungin" src="https://github.com/user-attachments/assets/fde04716-7bb7-421a-9f78-3a4eafb5fcb6" />
+
+- Kemudian ketik **exit**. Setelah itu, ketik **ping google.com** untuk mengetes koneksi
+<img width="1600" height="1200" alt="exit ping" src="https://github.com/user-attachments/assets/084dde8b-b34a-4088-a404-3d3fbb818149" />
+
+- Sekarang cek partisi Linux dengan mengetik **lsblk -o name,fstype,size**
+<img width="1200" height="1600" alt="fstype" src="https://github.com/user-attachments/assets/5cc531fa-f7f6-4675-a3fb-47dc6feab8a9" />
+  
+- Lalu ketik **cfdisk /dev/sdb**
+<img width="1600" height="1200" alt="cfdisk" src="https://github.com/user-attachments/assets/0edc4732-89b5-4e69-b566-8a6ca46fcaa3" />
+
+- Maka akan terbuka tampilan seperti ini. Lalu pilih **free space** kemudian pilih opsi **new**. Ubah partition size menjadi **1G**
+<img width="1600" height="1200" alt="tampilan cfdisk" src="https://github.com/user-attachments/assets/8a3733d0-0731-45d3-8dcf-1cd2a690243f" />
+
+- Kemudian pilih **/dev/sdb5**. Lalu pilih opsi **type**. Selanjutnya select partition type dengan memilih opsi **EFI System** (untuk boot)
+<img width="1600" height="1200" alt="WhatsApp Image 2026-05-24 at 11 37 25" src="https://github.com/user-attachments/assets/21dfbe19-9824-4f74-ae73-a589c2ca5cd0" />
+<img width="1200" height="1600" alt="WhatsApp Image 2026-05-24 at 11 37 26" src="https://github.com/user-attachments/assets/8cb35ec6-8930-4415-939c-f94924d703a6" />
+
+- Selanjutnya lakukan hal yang sama. Pilih **free space** kemudian pilih opsi **new**. Ubah partition size menjadi **4G**. Kemudian pilih **/dev/sdb6**. Lalu pilih opsi **type**. Selanjutnya select partition type dengan memilih opsi **Linux Swap** (untuk swap)
+<img width="1600" height="1200" alt="WhatsApp Image 2026-05-24 at 11 51 45" src="https://github.com/user-attachments/assets/d4fd1a06-9339-485e-a09d-06c001a2cf40" />
+<img width="1600" height="1200" alt="WhatsApp Image 2026-05-24 at 11 51 45 (1)" src="https://github.com/user-attachments/assets/de16ac31-5736-4301-9f2d-1027ee0144fd" />
+<img width="1200" height="1600" alt="WhatsApp Image 2026-05-24 at 11 51 46" src="https://github.com/user-attachments/assets/c5881e52-f787-4569-b5ab-9bc74998eeb5" />
+
+- Selanjutnya lakukan hal yang sama. Pilih **free space** kemudian pilih opsi **new**. Untuk partition size tidak perlu diubah karena itu sisa untuk root sekitar **24.3G**. Kemudian pilih **/dev/sdb7**. Lalu pilih opsi **write** dan ketik "yes". Lalu pilih opsi **quit**
+<img width="1600" height="1200" alt="WhatsApp Image 2026-05-24 at 11 59 36" src="https://github.com/user-attachments/assets/bc334a9a-0afc-4223-bf41-880cc365366d" />
+<img width="1600" height="1200" alt="WhatsApp Image 2026-05-24 at 11 59 38" src="https://github.com/user-attachments/assets/81a70a66-2bad-4233-8544-4283d1af9572" />
+<img width="1600" height="1200" alt="WhatsApp Image 2026-05-24 at 11 59 38 (1)" src="https://github.com/user-attachments/assets/77877fd4-ae9d-472c-85c8-b9fc2637a62c" />
+<img width="1600" height="1200" alt="WhatsApp Image 2026-05-24 at 11 59 38 (2)" src="https://github.com/user-attachments/assets/6b778798-4ffd-4b77-8912-6fd4902ac6e4" />
+<img width="1600" height="1200" alt="WhatsApp Image 2026-05-24 at 11 59 39" src="https://github.com/user-attachments/assets/364ead0b-018a-4840-8517-1a4550569a7d" />
+<img width="1600" height="1200" alt="WhatsApp Image 2026-05-24 at 11 59 40" src="https://github.com/user-attachments/assets/eff8bb14-1949-4d1e-b178-ebb4cd90b40d" />
+<img width="1600" height="1200" alt="WhatsApp Image 2026-05-24 at 11 59 41" src="https://github.com/user-attachments/assets/f5457f1e-c4c2-4c2c-9252-dc3695b1aa63" />
+
+- 
