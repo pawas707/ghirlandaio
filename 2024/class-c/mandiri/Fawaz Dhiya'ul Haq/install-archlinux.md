@@ -17,4 +17,3 @@
 <img width="1600" height="1200" alt="foto18" src="https://github.com/user-attachments/assets/7ab32447-3226-40b9-9dd7-a60751008dba" />
 <img width="1200" height="1600" alt="foto19" src="https://github.com/user-attachments/assets/91f57ba7-de1c-4663-bda0-047e5e0d8521" />
 
-
