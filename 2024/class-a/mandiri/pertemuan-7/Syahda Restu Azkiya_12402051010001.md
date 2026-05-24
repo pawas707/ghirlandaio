@@ -3,6 +3,7 @@
 #### Kelas : 4A
 
 # Dokumentasi Proses instalasi ArchLinux & Lainnya
+
 <img width="4055" height="2571" alt="13024" src="https://github.com/user-attachments/assets/da129406-ae22-4c2f-bb2e-7bdf6c2327b5" />
 
 <img width="4080" height="3060" alt="13039" src="https://github.com/user-attachments/assets/43588f38-0663-4c95-b1ca-c8b87a4d157f" />
