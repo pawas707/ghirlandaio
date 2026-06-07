@@ -53,7 +53,7 @@ vgcreate [pudding] /dev/mapper/[creamy]
 
 ### root
 ```
-lvcreate 15G pudding -n root
+lvcreate -L 15G pudding -n root
 ```
 ```
 mkfs.ext4 /dev/pudding/root
@@ -71,7 +71,7 @@ mount --mkdir -o uid=0,gid=0,fmask=0077,dmask=0077 /dev/partisi_boot /mnt/boot
 ### vars
 
 ```
-lvcreate 15G pudding -n vars
+lvcreate -L 15G pudding -n vars
 ```
 ```
 mkfs.ext4 /dev/pudding/vars
@@ -81,7 +81,7 @@ mount --mkdir -o rw,nodev,nosuid,relatime /dev/pudding/vars /mnt/var
 ```
 ### vtemp
 ```
-lvcreate 1G pudding -n vtemp
+lvcreate -L 1G pudding -n vtemp
 ```
 ```
 mkfs.ext4 /dev/pudding/vtemp
@@ -91,7 +91,7 @@ mount --mkdir -o rw,nodev,nosuid,noexec,relatime /dev/pudding/vtemp /mnt/var/tmp
 ```
 ### vlog
 ```
-lvcreate 1G pudding -n vlog
+lvcreate  -L 1G pudding -n vlog
 ```
 ```
 mkfs.ext4 /dev/pudding/vlog
@@ -101,7 +101,7 @@ mount --mkdir -o rw,nodev,nosuid,noexec,relatime /dev/pudding/vlog /mnt/var/log
 ```
 ### vaud
 ```
-lvcreate 1G pudding -n vaud
+lvcreate -L 1G pudding -n vaud
 ```
 ```
 mkfs.ext4 /dev/pudding/vaud
